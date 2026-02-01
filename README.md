@@ -4,7 +4,7 @@
 I am a **3rd-year Diploma of Information Technology student** at PUP - Taguig. My passion and expertise lie in **Frontend Development** and **UI/UX Design**, where I specialize in building responsive, user-centric interfaces.
 
 - **Forte:** Frontend Development & UI/UX Design.
-- **Experience:** Led technical projects like  **Eventix**, **CEFRS** and **Heybleepi** as a Project Manager / Frontend Developer.
+- **Experience:** Led technical projects like **MedAssistant**, **Eventix**, **Heybleepi** and **CEFRS** as a Project Manager / Frontend Developer.
 - **Growing Skills:** Exploring Python for web automation and streamlining development workflows.
 - **Contact:** relente.patriciajoy@gmail.com
 
