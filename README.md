@@ -39,6 +39,9 @@ I am a **3rd-year Diploma of Information Technology student** at PUP - Taguig. M
   <a href="https://www.linkedin.com/in/patricia-joy-relente-844442359" target="_blank">
     <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="linkedin logo" />
   </a>
+  <a href="NETLIFY_URL" target="_blank">
+    <img src="https://img.shields.io/static/v1?message=Portfolio&logo=netlify&label=&color=00C7B7&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="netlify logo" />
+  </a>
   <a href="mailto:relente.patriciajoy@gmail.com" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="gmail logo" />
   </a>
