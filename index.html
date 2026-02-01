@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patricia Joy Relente | Graphic Designer</title>
+    <link rel="icon" href="./assets/1768312053330.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-section">
+                    <div class="profile-img-wrapper">
+                        <img src="./assets/profile/profile1.png" alt="Patricia Joy Relente" class="profile-img profile-img-default">
+                        <img src="./assets/profile/profile2.jpg" alt="Patricia Joy Relente" class="profile-img profile-img-hover">
+                    </div>
+                    <div class="hero-info">
+                        <h1 class="hero-name">
+                            Patricia Joy Relente
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i></span>
+                        </h1>
+                        <p class="hero-location">
+                            <i class="fas fa-map-marker-alt"></i> Taguig City, Philippines
+                        </p>
+                        <p class="hero-title">Aspiring Web Developer | Graphic Designer | DIT Student</p>
+                        <div class="hero-buttons">
+                            <a href="https://calendly.com/relente-patriciajoy/30min" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-calendar"></i> Schedule a Call
+                            </a>
+                            <a href="mailto:relente.patriciajoy@gmail.com" class="btn btn-secondary">
+                                <i class="fas fa-envelope"></i> Send Email
+                            </a>
+                            <!-- <button class="btn btn-tertiary">
+                                <i class="fas fa-users"></i> Join My Community
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Main Content Grid -->
+    <div class="container main-grid">
+        <!-- Left Column -->
+        <div class="left-column">
+            <!-- About Me -->
+            <section class="card">
+                <div class="card-header">
+                    <div class="header-title">
+                        <i class="fas fa-user"></i>
+                        <h2>About Me</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p>I am an IT student with a focus on Project Management and Web Development. I have experience leading teams to build high-quality systems like CEFRS and Heybleepi.</p>
+                    <p>My goal is to combine my technical skills in software and hardware to create efficient IT solutions. I am a resourceful problem-solver who enjoys working in fast-paced environments.</p>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="card">
+                <div class="card-header">
+                    <div class="header-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h2>Education</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="education-item">
+                        <h3>Diploma in Information Technology</h3>
+                        <p class="university">Polytechnic University of the Philippines</p>
+                        <p class="duration">2023 - Present</p>
+                    </div>
+                    <div class="education-item">
+                        <h3>Science, Technology, Engineering, and Mathematics (STEM) </h3>
+                        <p class="university">Learn and Explore Montessori School Inc.</p>
+                        <p class="duration">2020 - 2022</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tech Stack -->
+            <section class="card">
+                <div class="card-header">
+                    <div class="header-title">
+                        <i class="fas fa-code"></i>
+                        <h2>Tech Stack</h2>
+                    </div>
+                    <a href="#" class="view-all">View All <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="card-content">
+                    <div class="tech-group">
+                        <h4>Frontend</h4>
+                        <div class="tech-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">SASS</span>
+                            <span class="tag">Tailwind CSS</span>
+                            <span class="tag">Angular</span>
+                            <span class="tag">Figma</span>
+                        </div>
+                    </div>
+                    <div class="tech-group">
+                        <h4>Backend & Database</h4>
+                        <div class="tech-tags">
+                            <span class="tag">PHP</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">OAuth 2.0 (Security/Integration)</span>
+                            <span class="tag">Springboot</span>
+                            <span class="tag">CRUD Engine Development</span>
+                        </div>
+                    </div>
+                    <div class="tech-group">
+                        <h4>Tools & Specialized</h4>
+                        <div class="tech-tags">
+                            <span class="tag">Canva & Adobe Suite (Graphic Design)</span>
+                            <span class="tag">Git & GitHub</span>
+                            <span class="tag">GitHub Actions (Automation)</span>
+                            <span class="tag">Automation Testing</span>
+                            <span class="tag">Hardware Troubleshooting</span>
+                            <span class="tag">Technical Project Management</span>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section class="card">
+                <div class="card-header">
+                    <div class="header-title">
+                        <i class="fas fa-certificate"></i>
+                        <h2>Certifications</h2>
+                    </div>
+                    <a href="#" class="view-all" id="viewAllCerts">View All <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="card-content" id="certsContainer">
+                    <div class="cert-item">
+                        <h4>Associate Data Analyst</h4>
+                        <p>DataCamp • 2025</p>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Intermediate SQL</h4>
+                        <p>DataCamp • 2025</p>
+                    </div>
+                    <div class="cert-item">
+                        <h4>Intermediate Python</h4>
+                        <p>DataCamp • 2025</p>
+                    </div>
+
+                    <!-- Add certifications with hidden-cert class -->
+                    <!-- <div class="cert-item hidden-cert">
+                        <h4>Your Next Certification</h4>
+                        <p>Provider • Year</p>
+                    </div> -->
+                </div>
+            </section>
+
+            <!-- Beyond the Screen -->
+            <section class="card">
+                <div class="card-header">
+                    <div class="header-title">
+                        <i class="fas fa-heart"></i>
+                        <h2>Beyond the Screen</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="section-desc">When I step away from the tech world, I love spending my time playing with my cats and being with my loved ones. I also enjoy exploring my creative side through handcrafting, photography and playing video games in my free time.</p>
+                    <div class="hobbies-carousel">
+                        <div class="hobbies-track">
+                            <img src="./assets/hobbies/hobby1.jpg" alt="Hobby 1">
+                            <img src="./assets/hobbies/hobby2.jpg" alt="Hobby 2">
+                            <img src="./assets/hobbies/hobby3.jpg" alt="Hobby 3">
+                            <img src="./assets/hobbies/hobby4.jpg" alt="Hobby 4">
+                            <!-- Duplicate set 1 -->
+                            <img src="./assets/hobbies/hobby6.jpg" alt="Hobby 1">
+                            <img src="./assets/hobbies/hobby7.jpg" alt="Hobby 2">
+                            <img src="./assets/hobbies/hobby8.jpg" alt="Hobby 3">
+                            <!-- <img src="./assets/hobbies/hobby9.jpg" alt="Hobby 4"> -->
+                            <!-- Duplicate set 2 -->
+                            <!-- <img src="./assets/hobbies/hobby10.jpg" alt="Hobby 1">
+                            <img src="./assets/hobbies/hobby11.jpg" alt="Hobby 2">
+                            <img src="./assets/hobbies/hobby12.jpg" alt="Hobby 3">
+                            <img src="./assets/hobbies/hobby13.jpg" alt="Hobby 4"> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <!-- Experience -->
+            <section class="card">
+                <div class="card-header">
+                    <div class="header-title">
+                        <i class="fas fa-briefcase"></i>
+                        <h2>Experience</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="experience-item">
+                        <div class="exp-marker"></div>
+                        <div class="exp-content">
+                            <h4>Canva Graphic Designer</h4>
+                            <p class="company">Part-time</p>
+                            <p class="duration">2025 - Present</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="exp-marker"></div>
+                        <div class="exp-content">
+                            <h4>Project Manager & Developer</h4>
+                            <p class="company">PUP - Taguig (Academic Projects)</p>
+                            <p class="duration">2025 – 2026</p>
+                            <p>I led the development of systems like CEFRS and Heybleepi.</p>
+                            <p>I managed team workflows and ensured our software was easy for people to use.</p>
+                        </div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="exp-marker"></div>
+                        <div class="exp-content">
+                            <h4>Accreditation Intern (Quality Assurance)</h4>
+                            <p class="company">PUP - Taguig</p>
+                            <p class="duration">2025</p>
+                            <p>I helped manage important school documents and records for engineering programs.</p>
+                            <p>I made sure everything was organized and met official standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects -->
+            <section class="card">
+                <div class="card-header">
+                    <div class="header-title">
+                        <i class="fas fa-folder"></i>
+                        <h2>Projects</h2>
+                    </div>
+                    <a href="#" class="view-all" id="viewAllProjects">View All <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="card-content">
+                    <div class="projects-grid" id="projectsGrid">
+                        <div class="project-card">
+                            <img src="./assets/projects/CEFRS.png" alt="CEFRS">
+                            <div class="project-info">
+                                <h4>CEFRS - Campus Equipment and Facility Reservation System</h4>
+                                <p>Centralized platform for real-time scheduling, automated notifications, and conflict-free resource allocation. Springboot & Angular</p>
+                                <p>Project Manager / Developer</p>
+                                <a href="http://cefrs.site/" class="project-link">Explore our Site</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="./assets/projects/heybleepi.png" alt="Heybleepi">
+                            <div class="project-info">
+                                <h4>Heybleepi</h4>
+                                <p>Social media-style platform that lets users interact through dynamic posts, real-time comments, and social engagement tools.</p>
+                                <p>Project Manager, Frontend Developer & UI/UX Design</p>
+                                <a href="https://heybleepi.site/PROJECT-CLUB-404/heybleepi/codes/php/index.php" class="project-link">Explore our Site</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="./assets/projects/eventix_logo.png" alt="Eventix">
+                            <div class="project-info">
+                                <h4>Eventix</h4>
+                                <p>Event Scheduling System for CCF</p>
+                                <p>Project Manager/ Full-stack Developer</p>
+                                <a href="https://eventix-ess.page.gd/" class="project-link">Explore our Site</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <img src="./assets/projects/EMS.png" alt="EMS">
+                            <div class="project-info">
+                                <h4>EMS - Enrollment Management System</h4>
+                                <p>Empowering academic institutions through efficient data management. - Database Administration</p>
+                                <a href="https://github.com/relente-patriciajoy/DBA-Enrollment-System.git" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-card hidden-project">
+                            <img src="./assets/projects/medassistant.png" alt="MedAssistant">
+                            <div class="project-info">
+                                <h4>MedAssistant</h4>
+                                <p>Object Orient Programming Project Using Java</p>
+                                <p>UI/UX & Full-stack Developer</p>
+                                <a href="https://github.com/relente-patriciajoy/Hospital-Management-System.git" class="project-link">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="card">
+                <div class="card-header">
+                    <div class="header-title">
+                        <i class="fas fa-star"></i>
+                        <h2>Testimonials</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="testimonials-slider">
+                        <div class="recommendation active">
+                            <p class="quote">"Her leadership skills made our work organized. It gave our work a proper direction because of it."</p>
+                            <p class="author">— Matthew</p>
+                        </div>
+                        <div class="recommendation">
+                            <p class="quote">"Patricia Relente is a hardworking student. I like her leadership skills. Being in a group with her makes punctuality important. With this website, I hope to know better about her and to collaborate with projects soon!"</p>
+                            <p class="author">— Justine</p>
+                        </div>
+                        <div class="recommendation">
+                            <p class="quote">"It was a pleasure working with Patricia Joy her dedication and teamwork made every project smoother."</p>
+                            <p class="author">— Bea</p>
+                        </div>
+                    </div>
+                    <div class="pagination-dots">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact -->
+            <section class="card contact-card">
+                <div class="card-header">
+                    <div class="header-title">
+                        <h2>Let's work together.</h2>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <p class="contact-desc">Available for Technical Project Management, Frontend Development, and UI/UX Design projects. I also provide expert support for IT Operations, Hardware Troubleshooting, and Technical Documentation.</p>
+                    
+                    <div class="contact-section">
+                        <h4>FOLLOW ME</h4>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/patricia-joy-relente-844442359"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/relente-patriciajoy"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="contact-section">
+                        <h4>GET IN TOUCH</h4>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <p class="label">EMAIL</p>
+                                <p class="value">relente.patriciajoy@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <a href="https://calendly.com/patriciajoy/30min" target="_blank" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <p class="label">LET'S TALK</p>
+                                    <p class="value">Schedule a Call</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <p class="label">COMMUNITY</p>
+                                <p class="value">Join Discussion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2026 Patricia Joy Relente. All Rights Reserved.</p>
+        <p>Developed in Taguig City, Philippines</p>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div class="chat-bubble" id="chatBubble">
+        <i class="fas fa-comment"></i>
+        <span class="chat-text">Chat with Me</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
