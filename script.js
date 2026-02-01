@@ -57,9 +57,197 @@ function initChatBubble() {
 
     if (chatBubble) {
         chatBubble.addEventListener('click', function () {
-            alert('Chat functionality - Connect this to your chat system');
+            openChatModal();
         });
     }
+}
+
+function openChatModal() {
+    // Check if modal already exists
+    if (document.getElementById('chatModal')) {
+        return;
+    }
+
+    // Create chat modal
+    const modal = document.createElement('div');
+    modal.id = 'chatModal';
+
+    modal.innerHTML = `
+        <div class="chat-header">
+            <div>
+                <h3 class="chat-title">Chat with Patricia</h3>
+                <p class="chat-subtitle">Usually replies instantly</p>
+            </div>
+            <button class="close-chat" onclick="closeChatModal()">×</button>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <p>👋 Hi! I'm Patricia's virtual assistant. How can I help you today?</p>
+            </div>
+        </div>
+
+        <div class="question-buttons" id="questionButtons">
+            <button class="question-btn" onclick="sendMessage('What services do you offer?')">
+                💼 What services do you offer?
+            </button>
+            <button class="question-btn" onclick="sendMessage('Tell me about your projects')">
+                🚀 Tell me about your projects
+            </button>
+            <button class="question-btn" onclick="sendMessage('What are your skills?')">
+                ⚡ What are your skills?
+            </button>
+            <button class="question-btn" onclick="sendMessage('How can I contact you?')">
+                📧 How can I contact you?
+            </button>
+        </div>
+    `;
+
+    document.body.appendChild(modal);
+}
+
+function closeChatModal() {
+    const modal = document.getElementById('chatModal');
+    if (modal) {
+        modal.style.animation = 'slideDown 0.3s ease';
+        setTimeout(() => {
+            modal.remove();
+        }, 300);
+    }
+}
+
+function sendMessage(question) {
+    const chatMessages = document.getElementById('chatMessages');
+
+    // Add user message
+    const userMsg = document.createElement('div');
+    userMsg.className = 'message user-message';
+    userMsg.innerHTML = `<p>${question}</p>`;
+    chatMessages.appendChild(userMsg);
+
+    // Scroll to bottom
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Show typing indicator
+    const typingIndicator = document.createElement('div');
+    typingIndicator.className = 'message bot-message typing-indicator';
+    typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+    typingIndicator.id = 'typingIndicator';
+    chatMessages.appendChild(typingIndicator);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    // Bot responses
+    const responses = {
+        'What services do you offer?': '💼 I offer the following services:\n\n• Technical Project Management\n• Frontend Development\n• UI/UX Design\n• IT Operations Support\n• Hardware Troubleshooting\n• Technical Documentation\n\nI specialize in building user-friendly systems and leading development teams!',
+
+        'Tell me about your projects': '🚀 I\'ve worked on several exciting projects:\n\n• <strong>CEFRS</strong> - Campus Equipment & Facility Reservation System (Springboot & Angular)\n• <strong>Heybleepi</strong> - Social media platform with dynamic posts and real-time interactions\n• <strong>Eventix</strong> - Event Scheduling System for CCF\n• <strong>EMS</strong> - Enrollment Management System\n\nCheck out the Projects section on my portfolio for more details and live demos!',
+
+        'What are your skills?': '⚡ My tech stack includes:\n\n<strong>Frontend:</strong> HTML, CSS, JavaScript, Angular, Tailwind CSS, Figma\n\n<strong>Backend:</strong> PHP, Python, Node.js, Springboot, MySQL\n\n<strong>Tools:</strong> Git & GitHub, Canva & Adobe Suite, Automation Testing\n\n<strong>Other:</strong> Project Management, Hardware Troubleshooting, Technical Documentation',
+
+        'How can I contact you?': '📧 I\'d love to hear from you! Here are the best ways to reach me:\n\n• <strong>Email:</strong> relente.patriciajoy@gmail.com\n• <strong>Schedule a Call:</strong> Book a time on my Calendly\n• <strong>LinkedIn:</strong> Connect with me professionally\n• <strong>GitHub:</strong> Check out my code\n\nI typically respond within 24 hours!'
+    };
+
+    // Remove typing indicator and add bot response after delay
+    setTimeout(() => {
+        document.getElementById('typingIndicator')?.remove();
+
+        const botMsg = document.createElement('div');
+        botMsg.className = 'message bot-message';
+        botMsg.innerHTML = `<p>${responses[question]}</p>`;
+        chatMessages.appendChild(botMsg);
+
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        // Show follow-up questions
+        showFollowUpQuestions(question);
+    }, 1500);
+}
+
+function showFollowUpQuestions(lastQuestion) {
+    const questionButtons = document.getElementById('questionButtons');
+
+    // Define follow-up questions based on what was just asked
+    const followUps = {
+        'What services do you offer?': [
+            { text: '💰 What are your rates?', response: 'rates' },
+            { text: '📅 Are you available for projects?', response: 'availability' },
+            { text: '🚀 Tell me about your projects', action: () => sendMessage('Tell me about your projects') }
+        ],
+        'Tell me about your projects': [
+            { text: '⚡ What are your skills?', action: () => sendMessage('What are your skills?') },
+            { text: '📧 How can I contact you?', action: () => sendMessage('How can I contact you?') },
+            { text: '💼 What services do you offer?', action: () => sendMessage('What services do you offer?') }
+        ],
+        'What are your skills?': [
+            { text: '🚀 Show me your projects', action: () => sendMessage('Tell me about your projects') },
+            { text: '📧 Let\'s work together!', action: () => sendMessage('How can I contact you?') },
+            { text: '💼 What services do you offer?', action: () => sendMessage('What services do you offer?') }
+        ],
+        'How can I contact you?': [
+            { text: '📧 Open my email', action: () => window.location.href = 'mailto:relente.patriciajoy@gmail.com' },
+            { text: '📅 Schedule a call', action: () => window.open('https://calendly.com/relente-patriciajoy/30min', '_blank') },
+            { text: '💼 Learn about my services', action: () => sendMessage('What services do you offer?') }
+        ]
+    };
+
+    // Custom responses for special follow-ups
+    const specialResponses = {
+        'rates': '💰 My rates vary depending on the project scope and requirements. I offer competitive pricing for:\n\n• Hourly consulting\n• Fixed-price projects\n• Retainer agreements\n\nLet\'s discuss your specific needs! Feel free to email me or schedule a call to get a customized quote.',
+        'availability': '📅 Yes, I\'m currently accepting new projects! My availability depends on the project timeline and scope.\n\nI\'m a student at PUP-Taguig, so I\'m most available for:\n• Part-time projects\n• Weekend work\n• Remote collaboration\n\nLet\'s schedule a call to discuss how I can help with your project!'
+    };
+
+    const buttons = followUps[lastQuestion] || [];
+
+    questionButtons.innerHTML = '';
+    buttons.forEach(btn => {
+        const button = document.createElement('button');
+        button.className = 'question-btn';
+        button.textContent = btn.text;
+        button.onclick = () => {
+            if (btn.response && specialResponses[btn.response]) {
+                // Handle special responses
+                const chatMessages = document.getElementById('chatMessages');
+
+                // Add user message
+                const userMsg = document.createElement('div');
+                userMsg.className = 'message user-message';
+                userMsg.innerHTML = `<p>${btn.text}</p>`;
+                chatMessages.appendChild(userMsg);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                // Show typing
+                const typingIndicator = document.createElement('div');
+                typingIndicator.className = 'message bot-message typing-indicator';
+                typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+                typingIndicator.id = 'typingIndicator';
+                chatMessages.appendChild(typingIndicator);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                // Add response
+                setTimeout(() => {
+                    document.getElementById('typingIndicator')?.remove();
+                    const botMsg = document.createElement('div');
+                    botMsg.className = 'message bot-message';
+                    botMsg.innerHTML = `<p>${specialResponses[btn.response]}</p>`;
+                    chatMessages.appendChild(botMsg);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                    // Show contact options
+                    questionButtons.innerHTML = `
+                        <button class="question-btn" onclick="window.location.href='mailto:relente.patriciajoy@gmail.com'">
+                            📧 Send me an email
+                        </button>
+                        <button class="question-btn" onclick="window.open('https://calendly.com/relente-patriciajoy/30min', '_blank')">
+                            📅 Schedule a call
+                        </button>
+                    `;
+                }, 1500);
+            } else if (btn.action) {
+                btn.action();
+            }
+        };
+        questionButtons.appendChild(button);
+    });
 }
 
 // Scroll Animations
